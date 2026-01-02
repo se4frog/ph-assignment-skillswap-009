@@ -8,12 +8,12 @@ import { Outlet } from 'react-router-dom';
 const HomeLayout = () => {
     return (
         <div className='flex flex-col min-h-screen'>
-            <header>
-                <Navbar></Navbar>
-            </header>
-            <main className='flex-1'>
-                <Outlet></Outlet>
-            </main>
+            <div className='flex-1'>
+                <Container>
+                    <Navbar></Navbar>
+                    <Outlet></Outlet>
+                </Container>
+            </div>
             <footer>
                 <Footer></Footer>
             </footer>

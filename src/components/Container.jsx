@@ -2,9 +2,9 @@
 
 const Container = ({ children }) => {
     return (
-        <div className='max-w-11/12 mx-auto border'>
-            {children}
-        </div>
+       <div className="min-h-screen bg-linear-to-b from-[#1a2a2f] via-[#0b1215] to-black text-slate-200">
+  {children}
+</div>
     );
 };
 
