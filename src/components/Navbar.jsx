@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className="
         
         py-5 lg:px-20 px-2 flex justify-between items-center 
-        sticky top-0
+        sticky top-0 z-50
         ">
             <div className="">
                 <div className='flex justify-center items-center
@@ -22,15 +22,13 @@ const Navbar = () => {
     backdrop-blur-md  border border-white/10
     shadow-lg rounded-4xl p-2
     '>
-                     <img className='w-10 transition-transform duration-700 ease-in-out hover:rotate-y-180 hover:rotate-360' src={logo} alt="" />
+                     <img className="w-10 transition-transform duration-700 ease-in-out  hover:rotate-360 hover:rotate-y-180" src={logo} alt="" />
                    </div>
                     <p className='text-2xl font-extrabold'>SkillSwap</p>
                 </div>
             </div>
             <div className='flex gap-2 md:gap-5 lg:gap-10
-            bg-white/10
-    backdrop-blur-md  border border-white/10
-    shadow-lg rounded-4xl py-3 px-5'>
+            bg-white/10 backdrop-blur-md  border border-white/10 shadow-lg rounded-4xl py-3 px-5'>
 
                 <NavLink to='/profile' className='flex justify-center items-center gap-1.5'>
                     <PiMaskHappyFill></PiMaskHappyFill>

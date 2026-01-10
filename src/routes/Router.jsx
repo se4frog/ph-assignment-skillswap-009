@@ -14,6 +14,7 @@ const Router = createBrowserRouter([
             {
                 index: true,
                 element: <Home></Home>,
+                loader:()=>fetch("/popularskills.json")
             }
         ]
     },

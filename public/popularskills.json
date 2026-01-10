@@ -1,0 +1,122 @@
+[
+  {
+    "skillId": 3,
+    "skillName": "Python for Data Science",
+    "providerName": "David Chen",
+    "providerEmail": "david.c@skillswap.com",
+    "price": 45,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Master the basics of Python, Pandas, and Matplotlib for data analysis.",
+    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5",
+    "category": "Technology"
+  },
+  {
+    "skillId": 4,
+    "skillName": "Sourdough Bread Baking",
+    "providerName": "Maria Rossi",
+    "providerEmail": "maria.bakes@skillswap.com",
+    "price": 25,
+    "rating": 4.7,
+    "slotsAvailable": 8,
+    "description": "Learn to cultivate your own starter and bake crusty artisan sourdough at home.",
+    "image": "https://images.unsplash.com/photo-1585478259715-876a6a81fc08",
+    "category": "Cooking"
+  },
+  {
+    "skillId": 5,
+    "skillName": "Vinyasa Flow Yoga",
+    "providerName": "Chloe Williams",
+    "providerEmail": "chloe.yoga@skillswap.com",
+    "price": 15,
+    "rating": 4.9,
+    "slotsAvailable": 12,
+    "description": "A rhythmic yoga practice focusing on breath-to-movement sequences.",
+    "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b",
+    "category": "Fitness"
+  },
+  {
+    "skillId": 6,
+    "skillName": "Digital Portrait Painting",
+    "providerName": "Liam O'Connor",
+    "providerEmail": "liam.art@skillswap.com",
+    "price": 35,
+    "rating": 4.5,
+    "slotsAvailable": 2,
+    "description": "Intermediate level course on light, shadow, and anatomy in Procreate.",
+    "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe",
+    "category": "Art"
+  },
+  {
+    "skillId": 7,
+    "skillName": "Spanish for Travelers",
+    "providerName": "Elena Rodriguez",
+    "providerEmail": "elena.r@skillswap.com",
+    "price": 18,
+    "rating": 4.8,
+    "slotsAvailable": 10,
+    "description": "Essential phrases and cultural tips for your next trip to Latin America or Spain.",
+    "image": "https://images.unsplash.com/photo-1551225255-7096706e902b",
+    "category": "Language"
+  },
+  {
+    "skillId": 8,
+    "skillName": "Mobile Photography Masterclass",
+    "providerName": "James Smith",
+    "providerEmail": "james.photo@skillswap.com",
+    "price": 30,
+    "rating": 4.6,
+    "slotsAvailable": 6,
+    "description": "Take professional-grade photos using only your smartphone and natural light.",
+    "image": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32",
+    "category": "Photography"
+  },
+  {
+    "skillId": 9,
+    "skillName": "Social Media Marketing",
+    "providerName": "Aisha Khan",
+    "providerEmail": "aisha.growth@skillswap.com",
+    "price": 40,
+    "rating": 4.7,
+    "slotsAvailable": 5,
+    "description": "Strategies to grow your brand on Instagram, TikTok, and LinkedIn.",
+    "image": "https://images.unsplash.com/photo-1611162617474-5b21e879e113",
+    "category": "Business"
+  },
+  {
+    "skillId": 10,
+    "skillName": "Beginner Piano Basics",
+    "providerName": "Samuel Lee",
+    "providerEmail": "sam.keys@skillswap.com",
+    "price": 22,
+    "rating": 4.4,
+    "slotsAvailable": 4,
+    "description": "Introduction to music theory and basic scales for the piano.",
+    "image": "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0",
+    "category": "Music"
+  },
+  {
+    "skillId": 11,
+    "skillName": "Hand-Poured Candle Making",
+    "providerName": "Sophie Bennett",
+    "providerEmail": "sophie.glow@skillswap.com",
+    "price": 28,
+    "rating": 4.9,
+    "slotsAvailable": 7,
+    "description": "Create custom scented soy candles with sustainable materials.",
+    "image": "https://images.unsplash.com/photo-1602872030219-cdebd52110ce",
+    "category": "Crafts"
+  },
+  {
+    "skillId": 12,
+    "skillName": "Mindfulness & Meditation",
+    "providerName": "Dr. Aris Thorne",
+    "providerEmail": "aris.zen@skillswap.com",
+    "price": 12,
+    "rating": 5.0,
+    "slotsAvailable": 20,
+    "description": "Guided sessions focused on stress reduction and mental clarity.",
+    "image": "https://images.unsplash.com/photo-1506126610012-745170f07491",
+    "category": "Wellness"
+  }
+]
