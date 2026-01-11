@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { FaStar, FaEnvelope, FaUser, FaTag, FaCheckCircle, FaUserAlt, FaUserAstronaut } from 'react-icons/fa';
 import { FaPaperPlane } from 'react-icons/fa6';
-import { BiSolidLeftArrow } from 'react-icons/bi';
-import { Link } from 'react-router-dom';
+
+
 
 
 const SkillDetailsCard = ({ skill }) => {
@@ -22,15 +22,9 @@ const SkillDetailsCard = ({ skill }) => {
 
 
     return (
-        <div className="min-h-screen flex items-center bg-base-200 py-10 px-4 md:px-10">
+        <div className="min-h-80 flex items-center py-10 px-4 md:px-10
+         bg-white/5 backdrop-blur-md  border border-white/1 shadow-lg">
             <div className="max-w-6xl mx-auto grow">
-
-                <div className='px-10 mb-5'>
-                    <Link className='btn' to='/'><BiSolidLeftArrow></BiSolidLeftArrow> Back to Home</Link>
-                </div>
-
-
-
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
 
@@ -43,7 +37,8 @@ const SkillDetailsCard = ({ skill }) => {
                             />
                         </figure>
 
-                        <div className="card bg-base-100 shadow-sm p-8">
+                        <div className="card p-8
+                         bg-white/1 backdrop-blur-md  border border-white/1 shadow-lg">
                             <div className="flex justify-between items-start mb-4">
                                 <div>
                                     <div className="badge badge-secondary gap-2 mb-2">
@@ -51,7 +46,7 @@ const SkillDetailsCard = ({ skill }) => {
                                     </div>
                                     <h1 className="text-4xl font-bold text-base-content">{skill.skillName}</h1>
                                 </div>
-                                <div className="flex items-center gap-1 bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full font-bold">
+                                <div className="flex items-center gap-1 bg-[#fae502] text-yellow-700 px-3 py-1 rounded-full font-bold">
                                     <FaStar /> {skill.rating}
                                 </div>
                             </div>
