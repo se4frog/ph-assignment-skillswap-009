@@ -2,7 +2,7 @@
 
 const Container = ({ children }) => {
     return (
-       <div className="min-h-screen bg-linear-to-b from-black to-black text-slate-200">
+       <div className="md:min-h-screen bg-linear-to-b from-black to-black text-slate-200">
   {children}
 </div>
     );

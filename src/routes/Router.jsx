@@ -6,6 +6,8 @@ import Login from '../pages/Login';
 import AuthLayout from '../layouts/AuthLayout';
 import SignUp from '../pages/SignUp';
 import SkillDetails from '../pages/SkillDetails';
+import ProfilePage from '../pages/ProfilePage';
+import ProfileLayout from '../layouts/ProfileLayout';
 
 const Router = createBrowserRouter([
     {
@@ -18,6 +20,10 @@ const Router = createBrowserRouter([
                 loader: () => fetch("/popularskills.json")
             }
         ]
+    },
+    {
+        path: '/profile',
+        element: <ProfileLayout></ProfileLayout>
     },
     {
         path: '/auth',
@@ -36,7 +42,7 @@ const Router = createBrowserRouter([
     {
         path: '/skill-details/:id',
         element: <SkillDetails></SkillDetails>,
-        loader:()=>fetch("/popularskills.json")
+        loader: () => fetch("/popularskills.json")
     },
     {
         path: "/*",

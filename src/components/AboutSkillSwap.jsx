@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaArrowAltCircleRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const AboutSkillSwap = () => {
   return (
@@ -28,9 +29,9 @@ const AboutSkillSwap = () => {
             </div>
            
            
-             <button className='bg-[#fae502] text-black hover:text-gray-400 font-bold py-3 px-8 rounded-lg transition-colors duration-300 btn'>
-              Join Our Community &gt;
-            </button>
+             <Link to='/auth/login' className='bg-[#fae502] text-black hover:text-gray-400 font-bold py-3 px-8 rounded-lg transition-colors duration-300 btn'>
+              Join Our Community<span className='font-extrabold text-lg'>&gt;</span>
+            </Link>
            
            
           </div>
