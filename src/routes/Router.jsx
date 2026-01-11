@@ -8,6 +8,8 @@ import SignUp from '../pages/SignUp';
 import SkillDetails from '../pages/SkillDetails';
 import ProfilePage from '../pages/ProfilePage';
 import ProfileLayout from '../layouts/ProfileLayout';
+import Loading from '../pages/Loading';
+import ErrorPage from '../pages/ErrorPage';
 
 const Router = createBrowserRouter([
     {
@@ -17,7 +19,8 @@ const Router = createBrowserRouter([
             {
                 index: true,
                 element: <Home></Home>,
-                loader: () => fetch("/popularskills.json")
+                loader: () => fetch("/popularskills.json"),
+                hydrateFallbackElement: <Loading></Loading>
             }
         ]
     },
@@ -42,11 +45,12 @@ const Router = createBrowserRouter([
     {
         path: '/skill-details/:id',
         element: <SkillDetails></SkillDetails>,
-        loader: () => fetch("/popularskills.json")
+        loader: () => fetch("/popularskills.json"),
+        hydrateFallbackElement: <Loading></Loading>
     },
     {
         path: "/*",
-        element: <h2>Error404</h2>,
+        element: <ErrorPage></ErrorPage>,
     },
 ])
 
