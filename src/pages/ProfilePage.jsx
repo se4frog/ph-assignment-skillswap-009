@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { use } from 'react';
 import { FaFacebookF, FaTwitter, FaInstagram, FaEdit } from 'react-icons/fa';
 
 const ProfilePage = () => {
@@ -7,6 +7,7 @@ const ProfilePage = () => {
     name: "Hunter Norton",
     email: "hunter.dev@skillswap.com",
     image: "https://img.freepik.com/free-photo/portrait-man-laughing_23-2148859448.jpg",
+    onelineBio:"I'm a creative PHP webdeveloper.",
     bio: "I am an allround web developer. I am a senior programmer with good knowledge of front-end techniques. Vitae sapien pellentesque habitant morbi tristique senectus et. Aenean sed adipiscing diam donec adipiscing tristique risus."
   };
 
@@ -16,9 +17,9 @@ const ProfilePage = () => {
         
         {/* Header Section */}
         <div className="text-center mb-16 space-y-2">
-          <h1 className="text-5xl font-bold tracking-tight text-white">Profile</h1>
+          <h1 className="text-5xl font-bold tracking-tight text-white">{user.name}</h1>
           <p className="text-xl text-gray-400 font-medium italic">
-            I'm a creative PHP webdeveloper
+            {user.onelineBio}
           </p>
         </div>
 
@@ -33,7 +34,7 @@ const ProfilePage = () => {
             <p className="text-gray-300 leading-relaxed text-sm lg:text-base">
               {user.bio}
             </p>
-            <p className="text-xs text-gray-500 italic">Image by Freepik</p>
+            
           </div>
 
           {/* Center: Profile Image with Glow/Ring */}
@@ -69,18 +70,10 @@ const ProfilePage = () => {
                 <p className="text-gray-200 wrap-break-word">{user.email}</p>
               </div>
 
-              <div>
-                <p className="font-black uppercase text-xs tracking-widest text-gray-500">Location:</p>
-                <p className="text-gray-200">'s-Hertogenbosch, The Netherlands, Earth</p>
-              </div>
+              
             </div>
 
-            {/* Social Icons */}
-            <div className="flex justify-center md:justify-start gap-4 text-xl py-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors"><FaFacebookF /></a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors"><FaTwitter /></a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors"><FaInstagram /></a>
-            </div>
+         
 
             {/* Update Profile Button - Inverted for Dark Theme */}
             <div className="pt-4">
