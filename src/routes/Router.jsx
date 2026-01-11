@@ -5,6 +5,7 @@ import Home from '../pages/Home';
 import Login from '../pages/Login';
 import AuthLayout from '../layouts/AuthLayout';
 import SignUp from '../pages/SignUp';
+import SkillDetails from '../pages/SkillDetails';
 
 const Router = createBrowserRouter([
     {
@@ -14,7 +15,7 @@ const Router = createBrowserRouter([
             {
                 index: true,
                 element: <Home></Home>,
-                loader:()=>fetch("/popularskills.json")
+                loader: () => fetch("/popularskills.json")
             }
         ]
     },
@@ -23,14 +24,19 @@ const Router = createBrowserRouter([
         element: <AuthLayout></AuthLayout>,
         children: [
             {
-                path:'/auth/login',
-                element:<Login></Login>
+                path: '/auth/login',
+                element: <Login></Login>
             },
             {
-                path:'/auth/signup',
-                element:<SignUp></SignUp>
+                path: '/auth/signup',
+                element: <SignUp></SignUp>
             }
         ]
+    },
+    {
+        path: '/skill-details/:id',
+        element: <SkillDetails></SkillDetails>,
+        loader:()=>fetch("/popularskills.json")
     },
     {
         path: "/*",
