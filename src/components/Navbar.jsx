@@ -24,7 +24,7 @@ const Navbar = () => {
     '>
                      <img className="w-10 transition-transform duration-700 ease-in-out  hover:rotate-360 hover:rotate-y-180" src={logo} alt="" />
                    </div>
-                    <p className='text-2xl font-extrabold'>SkillSwap</p>
+                    <p className='text-2xl font-extrabold'></p>
                 </div>
             </div>
             <div className='flex gap-2 md:gap-5 lg:gap-10

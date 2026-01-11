@@ -7,7 +7,7 @@ const TopRated = ({ skills }) => {
             <section className="bg-transparent py-20">
                 <div className="max-w-7xl mx-auto text-center">
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6]">
-                        Top Rated Providers
+                        Top <span className='text-[#fae502]'>Rated</span> Providers
                     </h2>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto mt-5 mb-16">
                         Connect with our highest-rated mentors. These providers have maintained

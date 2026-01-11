@@ -35,7 +35,7 @@ const Hero = () => {
 
 
                     <p className="mt-6 text-lg md:text-xl text-slate-300 leading-relaxed">
-                        Learn, teach, and exchange skills with people around you.
+                        Learn, teach, and exchange skills with people around you
                     </p>
 
 

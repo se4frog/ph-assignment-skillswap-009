@@ -13,8 +13,8 @@ const PopularSkillsSlider = ({ popSkills }) => {
     return (
         <section className="bg-transparent py-10 text-slate-200">
             <div className="text-center mb-10">
-                <h2 className="text-2xl md:text-5xl font-bold tracking-tight text-white drop-shadow-[0_0_18px_rgba(34,211,238,0.35)]">Popular Skills</h2>
-                <p className="text-slate-300 text-xl mt-2 font-extralight ">Learn from the best in our community. </p>
+                <h2 className="text-2xl md:text-5xl font-bold tracking-tight text-white ">Popular <span className='text-[#fae502]'>Skills</span></h2>
+                <p className="text-slate-300 text-xl mt-2 font-extralight ">Learn from the best in our community</p>
             </div>
 
             <Swiper

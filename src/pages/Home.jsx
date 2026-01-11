@@ -7,6 +7,7 @@ import { useLoaderData } from 'react-router-dom';
 import TopRated from '../components/TopRated';
 import HudaiLogo from '../components/HudaiLogo';
 import HowItWorks from '../components/HowItWorks';
+import AboutSkillSwap from '../components/AboutSkillSwap';
 
 
 const Home = () => {
@@ -36,6 +37,7 @@ const Home = () => {
                     <TopRated skills={topRatedSkills}></TopRated>
                 </div>
                 <HowItWorks></HowItWorks>
+                <AboutSkillSwap></AboutSkillSwap>
             </InsideContainer>
         </div>
     );

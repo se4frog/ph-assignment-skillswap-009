@@ -12,7 +12,7 @@ const HowItWorks = () => {
         
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 
-          ">How It Works</h2>
+          "><span className='text-[#fae502]'>How</span> It Works</h2>
           <p className="text-gray-400 max-w-xl mx-auto">
             Get started with SkillSwap in five easy simple steps.
           </p>
