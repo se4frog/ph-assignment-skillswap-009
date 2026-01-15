@@ -2,13 +2,14 @@ import React, { use } from 'react';
 import logo from '../assets/SkillSwap-Logo.png'
 import logo2 from '../assets/SW-Logo-201.png'
 
-import { FaHouse, FaUserPlus } from 'react-icons/fa6';
-import { CgLogIn } from 'react-icons/cg';
-import { NavLink } from 'react-router-dom';
+import { FaHouse, FaRegUser, FaUserPlus } from 'react-icons/fa6';
 import { PiMaskHappyFill } from 'react-icons/pi';
 import { AuthContext } from '../provider/AuthProvider';
 import { Tooltip } from 'react-tooltip';
 import MyLink from './MyLink';
+import { BiLogOut } from 'react-icons/bi';
+import { CgLogIn } from 'react-icons/cg';
+
 
 
 
@@ -33,50 +34,71 @@ const Navbar = () => {
             bg-white/10 backdrop-blur-md  border border-white/10 shadow-lg rounded-4xl py-3 px-5'>
 
                 <MyLink to={'/profile'}>
-                    {user ? <div>
-                        <div data-tooltip-id="profile-tooltip"
-                            className="cursor-pointer w-10">
-                            <img className='rounded-full border-2 hover:scale-105 hover:ease-in-out' src={user.image} alt="" /></div>
-                        <Tooltip
-                            id="profile-tooltip"
-                            place="bottom"
-                            className="bg-white/20 opacity-100 rounded-md border-2 border-white/1 px-3 py-2 shadow-xl z-100 mt-2"
-                            noArrow={true}
-                        >
-                            <div className="flex flex-col text-left">
-                                <span className="font-semibold text-sm">
-                                    My Profile
-                                </span>
-                                <span className="text-zinc-300 text-sm">
-                                    {user.name}
-                                </span>
-                                <span className="text-zinc-400 text-xs">
-                                    {user.email}
-                                </span>
+                    {user ?
+                        <div>
+                            <div data-tooltip-id="profile-tooltip"
+                                className="cursor-pointer">
+                                {user.image ? 
+                                   <div className='w-10'>
+                                    <img className='rounded-full border-2 hover:scale-110 hover:ease-in-out' src={user.image} alt="" />
+                                    </div> :
+                                    <div className='hover:scale-110 hover:ease-in-out rounded-full p-1 border-2'>
+                                        <FaRegUser></FaRegUser>
+                                    </div>
+                                }
                             </div>
-                        </Tooltip>
-                    </div>
+                            <Tooltip
+                                id="profile-tooltip"
+                                place="bottom"
+                                className="bg-white/20 opacity-100 rounded-md border-2 border-white/1 px-3 py-2 shadow-xl z-100 mt-2"
+                                noArrow={true}
+                            >
+                                <div className="flex flex-col text-left">
+                                    <span className="font-semibold text-sm">
+                                        My Profile
+                                    </span>
+                                    <span className="text-zinc-300 text-sm">
+                                        {user.name}
+                                    </span>
+                                    <span className="text-zinc-400 text-xs">
+                                        {user.email}
+                                    </span>
+                                </div>
+                            </Tooltip>
+                        </div>
                         : <PiMaskHappyFill></PiMaskHappyFill>}
                     <p className='font-bold '>Profile</p>
                 </MyLink>
-
 
                 <MyLink to='/' >
                     <FaHouse></FaHouse>
                     <p className='font-bold '>Home</p>
                 </MyLink>
+                {user ?
+                    <button className='flex justify-center items-center gap-1.5 hover:text-red-500 btn-ghost btn hover:cursor-pointer
+                    hover:bg-transparent'>
+                        <BiLogOut />
+                        <p className='font-bold'>Log Out</p>
+                    </button>
+                    :
+                    <div className='flex justify-between items-center gap-2 md:gap-5 lg:gap-10'>
 
-                <MyLink to='/auth/login'>
-
-                    <CgLogIn></CgLogIn>
-                    <p className='font-bold'>Login</p>
-                </MyLink>
-                <MyLink to='/auth/signup' className='
+                        <MyLink to='/auth/login'>
+                            <CgLogIn></CgLogIn>
+                            <p className='font-bold'>Login</p>
+                        </MyLink>
+                        <MyLink to='/auth/signup' className='
                 hidden lg:flex'>
-                    <FaUserPlus />
+                            <FaUserPlus />
+                            <p className='font-bold'>Sign Up</p>
+                        </MyLink>
+                    </div>
 
-                    <p className='font-bold'>Sign Up</p>
-                </MyLink>
+                }
+
+
+
+
             </div>
         </div>
     );

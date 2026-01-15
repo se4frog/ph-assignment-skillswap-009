@@ -6,7 +6,7 @@ const MyLink = ({ children, className = '', to }) => {
     <NavLink
       to={to}
       className={({ isActive }) =>
-        `flex justify-center items-center gap-1.5 ${className} ${
+        `flex justify-center items-center gap-1.5 hover:text-[#f8eb6060] ${className} ${
           isActive ? 'text-[#fae502]!' : ''
         }`
       }
