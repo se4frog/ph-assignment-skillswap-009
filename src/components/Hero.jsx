@@ -45,7 +45,7 @@ const Hero = () => {
 
 
                     <div className="mt-8 flex justify-center">
-                        <button className="rounded-full bg-[#fae502] px-8 py-3 text-base font-semibold text-black transition-all duration-300 hover:bg-[#fae502]  hover:shadow-[0_0_25px_rgba(34,211,238,0.5)]">
+                        <button className="rounded-full bg-[#fae502] px-8 py-3 text-base font-semibold text-black transition-all duration-300 hover:shadow-[0_0_25px_rgba(34,211,238,0.5)]">
                             Explore Skills
                         </button>
                     </div>

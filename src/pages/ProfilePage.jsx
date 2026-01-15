@@ -1,21 +1,18 @@
 import React, { use } from 'react';
 import { FaFacebookF, FaTwitter, FaInstagram, FaEdit } from 'react-icons/fa';
+import { AuthContext } from '../provider/AuthProvider';
+import NoProfile from './NoProfile';
 
 const ProfilePage = () => {
   
-  const user = {
-    name: "Hunter Norton",
-    email: "hunter.dev@skillswap.com",
-    image: "https://img.freepik.com/free-photo/portrait-man-laughing_23-2148859448.jpg",
-    onelineBio:"I'm a creative PHP webdeveloper.",
-    bio: "I am an allround web developer. I am a senior programmer with good knowledge of front-end techniques. Vitae sapien pellentesque habitant morbi tristique senectus et. Aenean sed adipiscing diam donec adipiscing tristique risus."
-  };
+  const {user} = use(AuthContext);
 
-  return (
+if (!user) return <NoProfile></NoProfile>;
+else return (
     <div className="min-h-screen bg-black text-white font-sans py-16 px-4">
       <div className="max-w-6xl mx-auto">
         
-        {/* Header Section */}
+ 
         <div className="text-center mb-16 space-y-2">
           <h1 className="text-5xl font-bold tracking-tight text-white">{user.name}</h1>
           <p className="text-xl text-gray-400 font-medium italic">
@@ -23,10 +20,9 @@ const ProfilePage = () => {
           </p>
         </div>
 
-        {/* Main Content Grid */}
+     
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
-          
-          {/* Left: About Me Section */}
+        
           <div className="order-2 md:order-1 space-y-4 text-center md:text-left">
             <h2 className="text-2xl font-bold border-b-2 border-zinc-800 pb-2 inline-block md:block">
               About me
@@ -37,10 +33,10 @@ const ProfilePage = () => {
             
           </div>
 
-          {/* Center: Profile Image with Glow/Ring */}
+         
           <div className="order-1 md:order-2 flex justify-center">
             <div className="relative group">
-              {/* Outer Glow Effect */}
+            
               <div className="absolute -inset-1 bg-linear-to-r from-gray-700 to-zinc-800 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
               
               <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-8 border-zinc-900 shadow-2xl">
@@ -53,7 +49,7 @@ const ProfilePage = () => {
             </div>
           </div>
 
-          {/* Right: Details Section */}
+       
           <div className="order-3 space-y-6 text-center md:text-left">
             <h2 className="text-2xl font-bold border-b-2 border-zinc-800 pb-2 inline-block md:block">
               Details
@@ -75,7 +71,6 @@ const ProfilePage = () => {
 
          
 
-            {/* Update Profile Button - Inverted for Dark Theme */}
             <div className="pt-4">
               <button className="btn btn-outline border-zinc-700 text-white rounded-none px-8 gap-2 hover:bg-[#fae502] hover:text-black transition-all uppercase tracking-widest text-xs">
                 <FaEdit /> Update Profile

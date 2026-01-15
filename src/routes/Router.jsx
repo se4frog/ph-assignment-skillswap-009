@@ -46,7 +46,8 @@ const Router = createBrowserRouter([
         path: '/skill-details/:id',
         element: <SkillDetails></SkillDetails>,
         loader: () => fetch("/popularskills.json"),
-        hydrateFallbackElement: <Loading></Loading>
+        hydrateFallbackElement: <Loading></Loading>,
+        errorElement:<ErrorPage></ErrorPage>
     },
     {
         path: "/*",

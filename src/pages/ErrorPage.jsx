@@ -24,7 +24,7 @@ const ErrorPage = () => {
                 <div className="space-y-2">
                     <h2 className="text-3xl font-bold tracking-tight">Lost in the Swap?</h2>
                     <p className="text-gray-400 text-lg leading-relaxed">
-                        We couldn't find the skill or page you were looking for.
+                        We couldn't find page you were looking for.
                     </p>
                 </div>
 

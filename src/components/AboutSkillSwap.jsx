@@ -29,8 +29,8 @@ const AboutSkillSwap = () => {
             </div>
            
            
-             <Link to='/auth/login' className='bg-[#fae502] text-black hover:text-gray-400 font-bold py-3 px-8 rounded-lg transition-colors duration-300 btn'>
-              Join Our Community<span className='font-extrabold text-lg'>&gt;</span>
+             <Link to='/auth/login' className="rounded-md btn bg-[#fae502] px-8 py-3 text-base font-semibold text-black transition-all duration-300 hover:shadow-[0_0_25px_rgba(34,211,238,0.5)]">
+              Join Our Community <span className='font-extrabold text-lg'>&gt;</span>
             </Link>
            
            
