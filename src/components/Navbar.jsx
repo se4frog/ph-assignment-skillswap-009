@@ -9,13 +9,23 @@ import { Tooltip } from 'react-tooltip';
 import MyLink from './MyLink';
 import { BiLogOut } from 'react-icons/bi';
 import { CgLogIn } from 'react-icons/cg';
+import { signOut } from 'firebase/auth';
 
 
 
 
 const Navbar = () => {
 
-    const { user } = use(AuthContext)
+    const { user, auth } = use(AuthContext)
+
+    const handleLogout =()=>{
+        console.log("user is trying to log out")
+        signOut(auth).then(()=>{
+            alert('Signed Out!')
+        }).catch((error)=>{
+            console.log(error.message)
+        })
+    }
 
     return (
         <div className="py-5 lg:px-20 px-2 flex justify-between items-center sticky top-0 z-50">
@@ -58,10 +68,10 @@ const Navbar = () => {
                                         My Profile
                                     </span>
                                     <span className="text-zinc-300 text-sm">
-                                        {user.name}
+                                        {user?.name}
                                     </span>
                                     <span className="text-zinc-400 text-xs">
-                                        {user.email}
+                                        {user?.email}
                                     </span>
                                 </div>
                             </Tooltip>
@@ -75,7 +85,7 @@ const Navbar = () => {
                     <p className='font-bold '>Home</p>
                 </MyLink>
                 {user ?
-                    <button className='flex justify-center items-center gap-1.5 hover:text-red-500 btn-ghost btn hover:cursor-pointer
+                    <button onClick={handleLogout} className='flex justify-center items-center gap-1.5 hover:text-red-500 hover:scale-105  hover:cursor-pointer
                     hover:bg-transparent'>
                         <BiLogOut />
                         <p className='font-bold'>Log Out</p>
