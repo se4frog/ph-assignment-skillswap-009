@@ -1,16 +1,52 @@
-# React + Vite
+# SkillSwap
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🔗 Live URL
 
-Currently, two official plugins are available:
+1. [https://skillswap-z.web.app/](https://skillswap-z.web.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. [https://skillswap-z.netlify.app/](https://skillswap-z.netlify.app/)
 
-## React Compiler
+## 📌 Purpose
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+SkillSwap is a skill‑sharing platform where users can browse skills, view details, and book sessions. The project demonstrates React routing, Firebase authentication, protected routes, and modern UI practices.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Key Features
+
+* Persistent **Navbar & Footer** across all routes
+* **Home Page** with Hero Slider, Popular Skills, Top Rated Providers, How It Works, and an extra relevant section
+* **Skill Listings** from JSON data (image, price, rating, provider info, category, etc.)
+* **Protected Skill Details Page** with redirect-after-login support
+* **Book Session Form** with success toast
+* **Authentication**:
+
+  * Email/Password Login & Signup
+  * Google Social Login
+  * Password validation & visibility toggle
+* **Forgot Password** with Gmail redirect
+* **My Profile Page** with user info and profile update using `updateProfile()`
+
+---
+
+## 🛠️ Technologies & Packages
+
+* React (Vite)
+* React Router DOM
+* Firebase (Auth & Hosting)
+* Tailwind CSS & DaisyUI
+* Swiper.js
+* Animate.css
+* react-hot-toast
+
+---
+
+## ✅ Notes
+
+* Email verification not implemented for evaluation convenience
+
+---
+
+## se4frog
+
+SkillSwap – Built with React & Firebase
