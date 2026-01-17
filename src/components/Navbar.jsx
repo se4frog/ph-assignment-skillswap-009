@@ -19,9 +19,9 @@ const Navbar = () => {
     const { user, auth } = use(AuthContext)
 
     const handleLogout =()=>{
-        console.log("user is trying to log out")
+        // console.log("user is trying to log out")
         signOut(auth).then(()=>{
-            alert('Signed Out!')
+            alert('You are Logged Out!')
         }).catch((error)=>{
             console.log(error.message)
         })

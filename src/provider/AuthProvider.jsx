@@ -11,13 +11,14 @@ const provider = new GoogleAuthProvider()
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState();
     const [loading, setLoading]= useState(true);
-    console.log(user)
+    
 
     const createUser = (email, password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
     const updateUser = (updatedData)=>{
+        setLoading(true)
         return updateProfile(auth.currentUser, updatedData)
     }
     const logIn = (email, password) => {

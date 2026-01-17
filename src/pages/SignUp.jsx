@@ -1,5 +1,5 @@
 import React, { use, useState } from 'react';
-import { FaEye, FaEyeSlash } from 'react-icons/fa6';
+import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa6';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 
@@ -8,8 +8,8 @@ const SignUp = () => {
     const [error, setError] = useState("");
     const [showPassword, setShowPassword] = useState(false);
 
-const navigate = useNavigate()
-    const { createUser, setUser, updateUser } = use(AuthContext)
+    const navigate = useNavigate()
+    const { createUser, setUser, updateUser, googleLogin } = use(AuthContext)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -22,31 +22,63 @@ const navigate = useNavigate()
         const password = form.password.value;
 
 
+
         if (password.length < 6) {
             setError("Password must be at least 6 characters.");
             return;
         }
+
+
+        const hasUpperCase = /[A-Z]/.test(password);
+        const hasLowerCase = /[a-z]/.test(password);
+
+        if (!hasUpperCase) {
+            setError("Password must contain at least one uppercase letter.");
+            return;
+        }
+
+        if (!hasLowerCase) {
+            setError("Password must contain at least one lowercase letter.");
+            return;
+        }
+
 
         createUser(email, password)
             .then((result) => {
                 const user = result.user
                 updateUser({ displayName: name, photoURL: photo })
                     .then(() => {
-                       setUser({...user,  displayName: name, photoURL: photo })
+                        setUser({ ...user, displayName: name, photoURL: photo })
                     }).catch((error) => {
-                        console.log(error.message)
+                        // console.log(error.message)
+                        setError(error.message)
                     });
-                
+
                 setError("")
                 navigate('/');
 
                 form.reset();
             })
             .catch((error) => {
-                console.log(error.code)
+                // console.log(error.code)
                 setError(error.message)
             })
     };
+
+    const haddleGoogleLogin = () => {
+        googleLogin()
+            .then((result) => {
+                const user = result.user;
+                setUser(user);
+                setError("");
+                navigate('/');
+            })
+            .catch((error) => {
+                // console.error("Google Sign-In Error:", error.message);
+                setError(error.message)
+            });
+
+    }
 
     const inputClass = "input w-full bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder:text-gray-400 focus:outline-none focus:border-[#fae502]";
 
@@ -102,7 +134,14 @@ const navigate = useNavigate()
                         {error && <p className="text-red-500 text-sm font-medium mt-2">{error}</p>}
 
                         <button type='submit' className="btn btn-neutral w-full mt-6 bg-[#fae502] hover:bg-[#e6d102] text-black border-none font-bold uppercase tracking-widest">
-                            Sign Up
+                            Register
+                        </button>
+
+                        <div className="divider before:bg-white/10 after:bg-white/10 text-gray-500 text-xs">OR</div>
+
+
+                        <button onClick={haddleGoogleLogin} type="button" className="btn btn-outline w-full border-white/20 text-white hover:bg-white/10 gap-2 font-medium">
+                            <FaGoogle className="text-red-500" /> Login with Google
                         </button>
 
                         <h3 className='text-center mt-4 font-medium text-gray-400'>

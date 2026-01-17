@@ -25,7 +25,6 @@ const Login = () => {
             return;
         }
 
-        console.log({ email, password });
         logIn(email, password)
             .then((result) => {
                 const user = result.user
@@ -36,7 +35,7 @@ const Login = () => {
                 form.reset();
             })
             .catch((error) => {
-                console.log(error.code)
+                // console.log(error.code)
                 setError(error.message)
             })
     };
@@ -46,10 +45,12 @@ const Login = () => {
             .then((result) => {
                 const user = result.user;
                 setUser(user);
+                setError("");
                 navigate(`${location.state ? location.state : '/'}`);
             })
             .catch((error) => {
-                console.error("Google Sign-In Error:", error.message);
+                // console.error("Google Sign-In Error:", error.message);
+                setError(error.message)
             });
 
     }
