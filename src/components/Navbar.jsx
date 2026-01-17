@@ -48,9 +48,9 @@ const Navbar = () => {
                         <div>
                             <div data-tooltip-id="profile-tooltip"
                                 className="cursor-pointer">
-                                {user.image ? 
-                                   <div className='w-10'>
-                                    <img className='rounded-full border-2 hover:scale-110 hover:ease-in-out' src={user.image} alt="" />
+                                {user?.photoURL ? 
+                                   <div className='w-10 h-10'>
+                                    <img className='rounded-full w-full h-full object-cover border-2 hover:scale-110 hover:ease-in-out' src={user?.photoURL} alt="" />
                                     </div> :
                                     <div className='hover:scale-110 hover:ease-in-out rounded-full p-1 border-2'>
                                         <FaRegUser></FaRegUser>
@@ -64,11 +64,11 @@ const Navbar = () => {
                                 noArrow={true}
                             >
                                 <div className="flex flex-col text-left">
-                                    <span className="font-semibold text-sm">
-                                        My Profile
+                                    <span className="font-semibold text-sm text-[#fae502]">
+                                        SwapSkill
                                     </span>
                                     <span className="text-zinc-300 text-sm">
-                                        {user?.name}
+                                        {user?.displayName}
                                     </span>
                                     <span className="text-zinc-400 text-xs">
                                         {user?.email}

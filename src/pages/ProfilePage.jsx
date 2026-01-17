@@ -14,7 +14,7 @@ else return (
         
  
         <div className="text-center mb-16 space-y-2">
-          <h1 className="text-5xl font-bold tracking-tight text-white">{user.name}</h1>
+          <h1 className="text-5xl font-bold tracking-tight text-white">{user.displayName}</h1>
           <p className="text-xl text-gray-400 font-medium italic">
             {user.onelineBio}
           </p>
@@ -41,8 +41,8 @@ else return (
               
               <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-8 border-zinc-900 shadow-2xl">
                 <img 
-                  src={user.image} 
-                  alt={user.name} 
+                  src={user.photoURL} 
+                  alt={user.displayName} 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
@@ -58,7 +58,7 @@ else return (
             <div className="space-y-4">
               <div>
                 <p className="font-black uppercase text-xs tracking-widest text-gray-500">Name:</p>
-                <p className="text-gray-200">{user.name}</p>
+                <p className="text-gray-200">{user.displayName}</p>
               </div>
               
               <div>

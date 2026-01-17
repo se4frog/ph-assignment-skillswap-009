@@ -1,6 +1,6 @@
 import React, { use, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa6';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 
 
@@ -8,8 +8,8 @@ const SignUp = () => {
     const [error, setError] = useState("");
     const [showPassword, setShowPassword] = useState(false);
 
-
-    const { createUser, setUser } = use(AuthContext)
+const navigate = useNavigate()
+    const { createUser, setUser, updateUser } = use(AuthContext)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -27,18 +27,20 @@ const SignUp = () => {
             return;
         }
 
-
-        // const user = { name, photo, email, password }
-        // console.log(user)
-
         createUser(email, password)
-            .then((userCredential) => {
-                const user = userCredential.user
-                console.log(user)
-                setUser(user)
+            .then((result) => {
+                const user = result.user
+                updateUser({ displayName: name, photoURL: photo })
+                    .then(() => {
+                       setUser({...user,  displayName: name, photoURL: photo })
+                    }).catch((error) => {
+                        console.log(error.message)
+                    });
+                
                 setError("")
+                navigate('/');
 
-                // form.reset();
+                form.reset();
             })
             .catch((error) => {
                 console.log(error.code)

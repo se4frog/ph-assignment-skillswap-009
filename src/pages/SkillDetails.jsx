@@ -9,10 +9,9 @@ import Footer from '../components/Footer';
 const SkillDetails = () => {
 
     const skilldata = useLoaderData();
-
     const { id } = useParams();
-
-    const skill = skilldata.find((skilltarget) => skilltarget.skillId == id);
+    
+    const skill = skilldata.find((skilltarget) => String(skilltarget.skillId) === String(id));
 
     return (
         <div className="skills-container">

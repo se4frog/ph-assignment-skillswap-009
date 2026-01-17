@@ -1,5 +1,5 @@
 import React, { use, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaEnvelope, FaLock, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../provider/AuthProvider';
 import { FaEye, FaEyeSlash } from 'react-icons/fa6';
@@ -8,7 +8,10 @@ const Login = () => {
     const [error, setError] = useState("");
     const [showPassword, setShowPassword] = useState(false);
 
-    const { setUser, logIn } = use(AuthContext)
+    const location = useLocation();
+    const navigate = useNavigate()
+
+    const { setUser, logIn, googleLogin } = use(AuthContext)
     const handleSubmit = (e) => {
         e.preventDefault();
         setError("");
@@ -24,11 +27,11 @@ const Login = () => {
 
         console.log({ email, password });
         logIn(email, password)
-            .then((userCredential) => {
-                const user = userCredential.user
-                console.log(user)
+            .then((result) => {
+                const user = result.user
                 setUser(user)
                 setError("")
+                navigate(`${location.state ? location.state : '/'}`)
 
                 form.reset();
             })
@@ -37,6 +40,19 @@ const Login = () => {
                 setError(error.message)
             })
     };
+
+    const haddleGoogleLogin = () => {
+        googleLogin()
+            .then((result) => {
+                const user = result.user;
+                setUser(user);
+                navigate(`${location.state ? location.state : '/'}`);
+            })
+            .catch((error) => {
+                console.error("Google Sign-In Error:", error.message);
+            });
+
+    }
 
 
     const inputClass = "input w-full bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder:text-gray-400 focus:outline-none focus:border-[#fae502]";
@@ -70,7 +86,12 @@ const Login = () => {
 
                         {/* Password Field */}
                         <div className="form-control">
-                            <label className="label py-1 text-xs uppercase tracking-widest text-gray-400" htmlFor="password">Password</label>
+                           <div className='flex justify-between'>
+                             <label className="label py-1 text-xs uppercase tracking-widest text-gray-400" htmlFor="password">
+                                Password
+                            </label>
+                            <a href="#" className="text-xs text-[#fae502] hover:underline mb-1">Forgot Password?</a>
+                           </div>
                             <div className="relative">
                                 <input
                                     id="password"
@@ -102,7 +123,7 @@ const Login = () => {
                         <div className="divider before:bg-white/10 after:bg-white/10 text-gray-500 text-xs">OR</div>
 
 
-                        <button type="button" className="btn btn-outline w-full border-white/20 text-white hover:bg-white/10 gap-2 font-medium">
+                        <button onClick={haddleGoogleLogin} type="button" className="btn btn-outline w-full border-white/20 text-white hover:bg-white/10 gap-2 font-medium">
                             <FaGoogle className="text-red-500" /> Login with Google
                         </button>
 

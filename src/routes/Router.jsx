@@ -10,6 +10,7 @@ import ProfilePage from '../pages/ProfilePage';
 import ProfileLayout from '../layouts/ProfileLayout';
 import Loading from '../pages/Loading';
 import ErrorPage from '../pages/ErrorPage';
+import PrivateRoute from '../provider/PrivateRoute';
 
 const Router = createBrowserRouter([
     {
@@ -44,10 +45,12 @@ const Router = createBrowserRouter([
     },
     {
         path: '/skill-details/:id',
-        element: <SkillDetails></SkillDetails>,
+        element: <PrivateRoute> 
+            <SkillDetails></SkillDetails>
+        </PrivateRoute>,
         loader: () => fetch("/popularskills.json"),
         hydrateFallbackElement: <Loading></Loading>,
-        errorElement:<ErrorPage></ErrorPage>
+        errorElement: <ErrorPage></ErrorPage>
     },
     {
         path: "/*",
