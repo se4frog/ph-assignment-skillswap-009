@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaEnvelope, FaLock, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../provider/AuthProvider';
 import { FaEye, FaEyeSlash } from 'react-icons/fa6';
+import toast from 'react-hot-toast';
 
 const Login = () => {
     const [error, setError] = useState("");
@@ -32,6 +33,7 @@ const Login = () => {
                 setUser(user)
                 setError("")
                 navigate(`${location.state ? location.state : '/'}`)
+                toast('welcome back!! 🍻')
 
                 form.reset();
             })
@@ -48,6 +50,7 @@ const Login = () => {
                 setUser(user);
                 setError("");
                 navigate(`${location.state ? location.state : '/'}`);
+                toast('welcome back!! 🍻')
             })
             .catch((error) => {
                 // console.error("Google Sign-In Error:", error.message);

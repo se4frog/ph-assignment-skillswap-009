@@ -10,6 +10,7 @@ import MyLink from './MyLink';
 import { BiLogOut } from 'react-icons/bi';
 import { CgLogIn } from 'react-icons/cg';
 import { signOut } from 'firebase/auth';
+import toast from 'react-hot-toast';
 
 
 
@@ -21,7 +22,7 @@ const Navbar = () => {
     const handleLogout =()=>{
         // console.log("user is trying to log out")
         signOut(auth).then(()=>{
-            alert('You are Logged Out!')
+            toast('You are Logged Out!! 😓')
         }).catch((error)=>{
             console.log(error.message)
         })
@@ -78,7 +79,7 @@ const Navbar = () => {
                             </Tooltip>
                         </div>
                         : <PiMaskHappyFill></PiMaskHappyFill>}
-                    <p className='font-bold '>Profile</p>
+                    <p className='font-bold hidden md:block '>Profile</p>
                 </MyLink>
 
                 <MyLink to='/' >

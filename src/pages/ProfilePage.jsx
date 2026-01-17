@@ -3,6 +3,7 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaEdit, FaSave, FaTimes } from 're
 import { AuthContext } from '../provider/AuthProvider';
 import NoProfile from './NoProfile';
 import Loading from './Loading';
+import toast from 'react-hot-toast';
 
 
 const ProfilePage = () => {
@@ -31,6 +32,7 @@ const ProfilePage = () => {
                 });
                 setIsEditing(false);
                 setLoading(false);
+                toast('Profile Updated!! 🍕')
 
             })
             .catch((error) => {

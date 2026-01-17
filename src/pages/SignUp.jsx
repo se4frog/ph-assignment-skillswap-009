@@ -2,6 +2,7 @@ import React, { use, useState } from 'react';
 import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa6';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
+import toast from 'react-hot-toast';
 
 
 const SignUp = () => {
@@ -49,7 +50,7 @@ const SignUp = () => {
                 updateUser({ displayName: name, photoURL: photo })
                     .then(() => {
                         setUser({ ...user, displayName: name, photoURL: photo })
-                         setLoading(false);
+                        setLoading(false);
                     }).catch((error) => {
                         // console.log(error.message)
                         setError(error.message)
@@ -57,7 +58,7 @@ const SignUp = () => {
 
                 setError("")
                 navigate('/');
-
+                toast('welcome to SkillSwap!! 🥦')
                 form.reset();
             })
             .catch((error) => {
@@ -73,6 +74,7 @@ const SignUp = () => {
                 setUser(user);
                 setError("");
                 navigate('/');
+                toast('welcome to SkillSwap!! 🥦')
             })
             .catch((error) => {
                 // console.error("Google Sign-In Error:", error.message);

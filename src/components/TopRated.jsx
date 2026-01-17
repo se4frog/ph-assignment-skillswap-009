@@ -1,5 +1,6 @@
 import React from 'react';
 import { HiStar } from 'react-icons/hi';
+import { Link } from 'react-router-dom';
 
 const TopRated = ({ skills }) => {
     return (
@@ -38,9 +39,11 @@ const TopRated = ({ skills }) => {
                                     </div>
 
 
-                                    <button className="btn btn-primary btn-sm btn-outline rounded-full px-6 group-hover:bg-primary group-hover:text-white">
+                                    <Link
+                                        to={`/skill-details/${skill.skillId}`}
+                                        className="btn btn-primary btn-sm btn-outline rounded-full px-6 group-hover:bg-primary group-hover:text-white">
                                         View
-                                    </button>
+                                    </Link>
 
                                 </div>
                             </div>

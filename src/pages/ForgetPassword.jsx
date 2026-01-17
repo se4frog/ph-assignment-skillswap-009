@@ -11,7 +11,7 @@ const ForgetPassword = () => {
     useEffect(() => {
         if (location.state?.email) {
             setEmail(location.state.email);
-            console.log(email)
+            
         }
     }, [location.state]);
 
