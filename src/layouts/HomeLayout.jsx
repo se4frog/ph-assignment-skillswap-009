@@ -8,13 +8,14 @@ import Loading from '../pages/Loading';
 
 const HomeLayout = () => {
 
-    const  {state} = useNavigation()
+    const { state } = useNavigation()
+
     return (
         <div className='flex flex-col min-h-screen'>
             <div className='flex-1'>
                 <Container>
                     <Navbar></Navbar>
-                  {state=="loading" ? <Loading></Loading>: <Outlet></Outlet>}
+                    {state == "loading" ? <Loading></Loading> : <Outlet></Outlet>}
                 </Container>
             </div>
             <footer>

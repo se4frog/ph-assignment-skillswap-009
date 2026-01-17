@@ -10,7 +10,12 @@ const ProfilePage = () => {
     const { user, updateUser, setUser, loading, setLoading } = use(AuthContext);
     const [isEditing, setIsEditing] = useState(false);
 
-    if (!user) return <NoProfile></NoProfile>;
+    if (!user) {
+
+        if (loading) return <Loading className='items-start'></Loading>;
+
+        return <NoProfile></NoProfile>;
+    }
 
 
     const handleUpdate = (e) => {

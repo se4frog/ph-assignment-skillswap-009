@@ -1,16 +1,19 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigation } from 'react-router-dom';
 import Container from '../components/Container';
 
 const AuthLayout = () => {
+
+    const { state } = useNavigation()
+    
     return (
         <div className='flex flex-col'>
-           <div className='flex-1'>
+            <div className='flex-1'>
                 <Container>
                     <Navbar></Navbar>
-                    <Outlet></Outlet>
+                    {state == "loading" ? <Loading></Loading> : <Outlet></Outlet>}
                 </Container>
             </div>
             <footer>
