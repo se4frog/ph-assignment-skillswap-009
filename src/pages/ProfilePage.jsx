@@ -24,7 +24,6 @@ const ProfilePage = () => {
         const name = form.name.value;
         const photo = form.photo.value;
 
-        console.log("New Data:", { name, photo });
         updateUser({ displayName: name, photoURL: photo })
             .then(() => {
                 setUser((prevUser) => {
@@ -35,7 +34,6 @@ const ProfilePage = () => {
 
             })
             .catch((error) => {
-                // console.log(error.message)
                 console.log(error.message)
                 setIsEditing(false);
             });

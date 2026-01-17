@@ -11,6 +11,7 @@ import ProfileLayout from '../layouts/ProfileLayout';
 import Loading from '../pages/Loading';
 import ErrorPage from '../pages/ErrorPage';
 import PrivateRoute from '../provider/PrivateRoute';
+import ForgetPassword from '../pages/ForgetPassword';
 
 const Router = createBrowserRouter([
     {
@@ -35,11 +36,15 @@ const Router = createBrowserRouter([
         children: [
             {
                 path: '/auth/login',
-                element: <Login></Login>
+                element: <Login></Login>,
             },
             {
                 path: '/auth/signup',
                 element: <SignUp></SignUp>
+            },
+            {
+                path:'/auth/forget-password',
+                element:<ForgetPassword></ForgetPassword>,
             }
         ]
     },

@@ -1,10 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaArrowAltCircleLeft, FaArrowLeft, FaExclamationTriangle, FaHome, FaSearch } from 'react-icons/fa';
 import logo from '../assets/SW-Logo-1.png'
 import { FaBackward, FaBackwardStep } from 'react-icons/fa6';
 
 const ErrorPage = () => {
+
+    const navigate = useNavigate()
     return (
         <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-6 py-12">
 
@@ -37,12 +39,12 @@ const ErrorPage = () => {
                         <FaHome />
                     </Link>
 
-                    <button
-                        onClick={() => window.history.back()}
+                    <Link
+                        onClick={() => navigate(-1)}
                         className="btn btn-outline border-zinc-700 text-white rounded-none px-8 gap-2 hover:bg-zinc-900 hover:border-zinc-500 transition-all uppercase tracking-widest text-xs"
                     >
                         <FaArrowLeft></FaArrowLeft>
-                    </button>
+                    </Link>
                 </div>
             </div>
 

@@ -7,7 +7,8 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa6';
 const Login = () => {
     const [error, setError] = useState("");
     const [showPassword, setShowPassword] = useState(false);
-
+    
+    const [email, setEmail] = useState("");
     const location = useLocation();
     const navigate = useNavigate()
 
@@ -78,6 +79,8 @@ const Login = () => {
                                     id="email"
                                     name='email'
                                     type="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
                                     className={inputClass}
                                     placeholder="email@example.com"
                                     required
@@ -87,12 +90,14 @@ const Login = () => {
 
                         {/* Password Field */}
                         <div className="form-control">
-                           <div className='flex justify-between'>
-                             <label className="label py-1 text-xs uppercase tracking-widest text-gray-400" htmlFor="password">
-                                Password
-                            </label>
-                            <a href="#" className="text-xs text-[#fae502] hover:underline mb-1">Forgot Password?</a>
-                           </div>
+                            <div className='flex justify-between'>
+                                <label className="label py-1 text-xs uppercase tracking-widest text-gray-400" htmlFor="password">
+                                    Password
+                                </label>
+                                <Link to='/auth/forget-password'
+                                    state={{ email:email }}
+                                    className="text-xs text-[#fae502] hover:underline mb-1">Forgot Password?</Link>
+                            </div>
                             <div className="relative">
                                 <input
                                     id="password"

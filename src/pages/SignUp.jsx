@@ -9,7 +9,7 @@ const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
 
     const navigate = useNavigate()
-    const { createUser, setUser, updateUser, googleLogin } = use(AuthContext)
+    const { createUser, setUser, updateUser, googleLogin, setLoading } = use(AuthContext)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -49,6 +49,7 @@ const SignUp = () => {
                 updateUser({ displayName: name, photoURL: photo })
                     .then(() => {
                         setUser({ ...user, displayName: name, photoURL: photo })
+                         setLoading(false);
                     }).catch((error) => {
                         // console.log(error.message)
                         setError(error.message)
