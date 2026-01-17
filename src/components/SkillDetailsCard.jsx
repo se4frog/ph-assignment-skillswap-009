@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import toast from 'react-hot-toast';
 import { FaStar, FaEnvelope, FaUser, FaTag, FaCheckCircle, FaUserAlt, FaUserAstronaut } from 'react-icons/fa';
 import { FaPaperPlane } from 'react-icons/fa6';
 
@@ -7,17 +8,11 @@ import { FaPaperPlane } from 'react-icons/fa6';
 
 const SkillDetailsCard = ({ skill }) => {
 
-
-
-
-    const [formData, setFormData] = useState({ name: '', email: '' });
-    const [showToast, setShowToast] = useState(false);
-
     const handleBooking = (e) => {
         e.preventDefault();
-        setShowToast(true);
-        setFormData({ name: '', email: '' });
-        setTimeout(() => setShowToast(false), 3000);
+        const form = e.target;
+        form.reset();
+        toast('Booking Succesfull 🔥')
     };
 
 
@@ -96,8 +91,7 @@ const SkillDetailsCard = ({ skill }) => {
                                                 type="text"
                                                 placeholder="Your Name"
                                                 className="input input-bordered w-full bg-base-100"
-                                                value={formData.name}
-                                                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+
                                                 required
                                             />
                                         </div>
@@ -107,8 +101,7 @@ const SkillDetailsCard = ({ skill }) => {
                                                 type="email"
                                                 placeholder="Your Email"
                                                 className="input input-bordered w-full bg-base-100"
-                                                value={formData.email}
-                                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+
                                                 required
                                             />
                                         </div>
@@ -118,14 +111,7 @@ const SkillDetailsCard = ({ skill }) => {
                                         </button>
                                     </form>
                                 </div>
-                                {showToast && (
-                                    <div className="toast toast-end toast-top z-50">
-                                        <div className="alert alert-success shadow-lg text-white font-medium">
-                                            <FaCheckCircle />
-                                            <span>Booking successful!</span>
-                                        </div>
-                                    </div>
-                                )}
+
                             </div>
                         </div>
                     </div>

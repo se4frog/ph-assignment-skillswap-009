@@ -7,7 +7,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa6';
 const Login = () => {
     const [error, setError] = useState("");
     const [showPassword, setShowPassword] = useState(false);
-    
+
     const [email, setEmail] = useState("");
     const location = useLocation();
     const navigate = useNavigate()
@@ -95,8 +95,9 @@ const Login = () => {
                                     Password
                                 </label>
                                 <Link to='/auth/forget-password'
-                                    state={{ email:email }}
-                                    className="text-xs text-[#fae502] hover:underline mb-1">Forgot Password?</Link>
+                                    state={{ email: email }}
+                                    className="text-xs text-[#fae502] hover:underline mb-1">Forgot Password?
+                                </Link>
                             </div>
                             <div className="relative">
                                 <input

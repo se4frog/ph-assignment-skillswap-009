@@ -5,7 +5,7 @@ import HudaiLogo2 from '../assets/SW-Logo-201.png'
 const HudaiLogo = () => {
     return (
         <div className='flex justify-between items-center'>
-            
+
 
             <div className=''>
                 <img src={HudaiLogo1} alt="" />
@@ -13,7 +13,7 @@ const HudaiLogo = () => {
             <div className=''>
                 <img src={HudaiLogo2} alt="" />
             </div>
-        
+
         </div>
     );
 };

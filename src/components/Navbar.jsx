@@ -33,7 +33,8 @@ const Navbar = () => {
             <div className='flex justify-center items-center
                 text-xl gap-1'>
                 <div className='bg-white/10 backdrop-blur-md  border border-white/10 shadow-lg rounded-4xl p-2'>
-                    <img className="w-10 transition-transform duration-700 ease-in-out  hover:rotate-360 hover:rotate-y-180 hover:rotate-x-180" src={logo} alt="" />
+                    <img className="w-10 transition-transform duration-700 ease-in-out  hover:rotate-360 hover:rotate-y-180
+                    animate__animated animate__pulse animate__infinite" src={logo} alt="" />
                 </div>
                 <div className='w-20'>
                     <img src={logo2} alt="" />
